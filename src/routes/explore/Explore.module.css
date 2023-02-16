@@ -1,0 +1,21 @@
+.content {
+  margin: 5rem 1rem 5rem 1rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.resort-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating svg {
+  margin-right: 0.5rem;
+}

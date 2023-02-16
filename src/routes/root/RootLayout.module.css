@@ -1,0 +1,11 @@
+.tabs {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: #fff;
+  border-top: 1px solid #dfe1ff;
+}
+
+.large-icon {
+  font-size: 1.4rem;
+}

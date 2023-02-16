@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfe1ff;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  width: 100vw;
+  z-index: 100;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.large-icon {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,54 @@
+.r-button-circle {
+  border-radius: 4rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.r-button {
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border: none;
+  text-decoration: none;
+}
+
+.r-button-primary {
+  background: #A41623;
+  color: #FDFDFD;
+}
+
+.r-button-secondary {
+  background: #FFFFFF;
+  color: var(--vt-c-black-soft);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.r-button-tertiary {
+  text-align: left;
+  background: #FFFFFF;
+  color: var(--vt-c-black-soft);
+  border: none;
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.r-button-full {
+  width: 100%;
+  display: block;
+}
+
+.r-button-pill {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 4rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 1.4rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

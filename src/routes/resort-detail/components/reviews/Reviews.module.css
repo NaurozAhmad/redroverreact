@@ -1,0 +1,58 @@
+.slider {
+  display: flex;
+  width: calc(100vw - 2rem);
+  overflow-x: scroll;
+  padding-bottom: 0.5rem;
+}
+
+.review {
+  width: 20rem;
+  min-width: 20rem;
+  height: 12rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.3rem;
+}
+
+.review-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.review-body {
+  max-height: calc(1.58rem * 4);
+  line-height: 1.58rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+}
+
+.review-username {
+  line-height: 100%;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ececec;
+  background-size: 3rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .slider {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+
+  .review {
+    width: calc(50% - 2rem);
+    min-width: auto;
+  }
+}
