@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { ApolloError, useQuery } from '@apollo/client';
 
 import styles from './ResortDetail.module.css';
+import ButtonStyles from 'button.module.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import GET_RESORT from 'gql/resortFull';
@@ -14,6 +16,7 @@ import NearbyAttractions from './components/attractions/NearbyAttractions';
 import AboutResort from './components/about-resort/AboutResort';
 import { useState } from 'react';
 import { Resort } from 'interfaces';
+import { Link } from 'react-router-dom';
 
 const ResortDetail = () => {
   const { id } = useParams();
@@ -61,12 +64,20 @@ const ResortDetail = () => {
             </div>
           </div>
           <hr />
-          <div className="details-container">
+          <div className="details-container mb5">
             <AboutResort resort={data?.resort} />
             <Accommodation resort={data?.resort} />
             <Amenities resort={data?.resort} />
             <Reviews resort={data?.resort} openReviews={openReviews} onReviewsClose={onReviewsClose} />
             <NearbyAttractions resort={data?.resort} />
+
+            <div className={`${styles['cta-container']} p1 flex flex-center`}>
+              <div>
+                <div><span className="bold">{ data?.resort.price }</span> <span className="font-secondary">night</span></div>
+                <div className="font-secondary bold underline">May 2 - May 5</div>
+              </div>
+              <Link className={`${ButtonStyles['r-button']} ${ButtonStyles['r-button-primary']} mlauto mr2 cursor-pointer`} to="/reserve">Reserve</Link>
+            </div>
           </div>
         </div>
       </div>

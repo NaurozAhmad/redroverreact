@@ -75,7 +75,6 @@ const NearbyAttractions = (props: { resort: Resort | undefined }) => {
             ))}
           </DialogContent>
         </Dialog>
-        <hr />
       </section>
     </>
   );
