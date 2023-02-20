@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Dialog, DialogContent, DialogTitle, IconButton, Typography } from '@mui/material';
-import ButtonStyles from 'button.module.css';
+import ButtonStyles from 'styles/button.module.css';
 import { Resort } from 'interfaces';
 import { useState } from 'react';
 

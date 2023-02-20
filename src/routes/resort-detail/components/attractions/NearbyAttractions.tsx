@@ -10,7 +10,7 @@ import {
   IconButton,
 } from '@mui/material';
 
-import ButtonStyles from 'button.module.css';
+import ButtonStyles from 'styles/button.module.css';
 import { NearbyAttraction, Resort } from 'interfaces';
 import { useState } from 'react';
 

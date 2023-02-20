@@ -68,10 +68,18 @@ export interface LocalActivity {
 };
 
 export interface Event {
-  _id: string;
+  id: string;
   name: string;
   description: string;
   images: string[];
   resortId: string;
   dateCreated: string;
+};
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
 };

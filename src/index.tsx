@@ -5,7 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import './index.css';
+import 'styles/index.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -29,21 +29,21 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: '/',
+        index: true,
         element: <Explore />,
       },
       {
         path: '/resort-detail/:id',
-        element: <ResortDetail />
+        element: <ResortDetail />,
       },
       {
         path: '/login',
-        element: <Login />
+        element: <Login />,
       },
       {
         path: '/signup',
-        element: <Signup />
-      }
+        element: <Signup />,
+      },
     ],
   },
 ]);
@@ -64,15 +64,15 @@ const theme = createTheme({
       fontSize: 25,
     },
     h3: {
-      fontSize: 21
+      fontSize: 21,
     },
     body1: {
       fontSize: 16,
     },
     body2: {
       fontSize: 11,
-    }
-  }
+    },
+  },
 });
 
 const httpLink = createHttpLink({
@@ -85,8 +85,8 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : '',
-    }
-  }
+    },
+  };
 });
 
 const client = new ApolloClient({

@@ -1,5 +1,5 @@
 import styles from '../ResortDetail.module.css';
-import buttonStyles from '../../../button.module.css';
+import buttonStyles from 'styles/button.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';

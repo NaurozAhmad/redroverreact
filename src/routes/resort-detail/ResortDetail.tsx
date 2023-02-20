@@ -1,26 +1,28 @@
-import { useParams } from 'react-router-dom';
-
+import { useContext, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ApolloError, useQuery } from '@apollo/client';
 
 import styles from './ResortDetail.module.css';
-import ButtonStyles from 'button.module.css';
+import ButtonStyles from 'styles/button.module.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Resort } from 'interfaces';
+import { AuthContext } from 'AuthContext';
 
-import GET_RESORT from 'gql/resortFull';
+import GET_RESORT from 'gql/resort.query';
 import ResortDetailHeader from './components/ResortDetailHeader';
 import Accommodation from './components/Accommodation';
 import Amenities from './components/Amenities';
 import Reviews from './components/reviews/Reviews';
 import NearbyAttractions from './components/attractions/NearbyAttractions';
 import AboutResort from './components/about-resort/AboutResort';
-import { useState } from 'react';
-import { Resort } from 'interfaces';
-import { Link } from 'react-router-dom';
 
 const ResortDetail = () => {
   const { id } = useParams();
   const [openReviews, setOpenReviews] = useState(false);
+  const { userData } = useContext(AuthContext);
+
+  console.log('auth context', userData);
 
   const {
     loading,

@@ -3,12 +3,14 @@ import styles from './Navbar.module.css';
 import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu, MenuItem } from '@mui/material';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { AuthContext } from 'AuthContext';
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const { userData, setUserData } = useContext(AuthContext);
   const navigate = useNavigate();
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -17,17 +19,24 @@ const Navbar = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
-  }
+  };
 
   const signup = () => {
     setAnchorEl(null);
     navigate('/signup');
-  }
+  };
 
   const login = () => {
     setAnchorEl(null);
     navigate('/login');
-  }
+  };
+
+  const logout = () => {
+    setAnchorEl(null);
+    setUserData(false);
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+  };
 
   return (
     <header className={styles['navbar']}>
@@ -44,9 +53,11 @@ const Navbar = () => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <Link to="/" className="no-link"><MenuItem>Explore Resorts</MenuItem></Link>
-        <MenuItem onClick={login}>Log in</MenuItem>
-        <MenuItem onClick={signup}>Sign up</MenuItem>
+        <Link to="/" className="no-link">
+          <MenuItem>Explore Resorts</MenuItem>
+        </Link>
+        {userData ? <MenuItem onClick={logout}>Log out</MenuItem> : <MenuItem onClick={login}>Log in</MenuItem>}
+        {userData ? null : <MenuItem onClick={signup}>Sign up</MenuItem>}
       </Menu>
     </header>
   );
