@@ -29,9 +29,9 @@ const Login = () => {
       <Navbar />
       <div className={styles['content']}>
         <h1>Login</h1>
-        <Box component="form" sx={{ '& > :not(style)': { mb: 1, width: '100%' } }} onSubmit={doLogin}>
+        <Box component="form" sx={{ '& > :not(style)': { mb: 1, width: '100%' } }} onSubmit={doLogin} data-testid="loginform">
           <TextField id="email" name="email" label="Email" type="email" variant="outlined" />
-          <TextField id="password" name="password" label="Password" type="password" variant="outlined" />
+          <TextField id="password" name="password" label="Password" type="password" variant="outlined" data-testid="l-password"/>
           <div className="mt1">
             <Button variant="contained" fullWidth type="submit">
               Log in
