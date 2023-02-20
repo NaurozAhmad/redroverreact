@@ -9,7 +9,7 @@ import ButtonStyles from 'styles/button.module.css';
 import { Resort } from 'interfaces';
 import { AuthContext } from 'AuthContext';
 
-import GET_RESORT from 'gql/resort.query';
+import GET_RESORT from 'queries/Resort.query';
 import ResortDetailHeader from './components/ResortDetailHeader';
 import Accommodation from './components/Accommodation';
 import Amenities from './components/Amenities';

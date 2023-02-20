@@ -32,7 +32,10 @@ const Explore = () => {
   `);
   console.log('resort data', data);
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  if (error) {
+    console.log('got error from server', JSON.parse(JSON.stringify(error)));
+    return <p>Error : {error.message}</p>
+  };
   return (
     <>
       <Navbar />

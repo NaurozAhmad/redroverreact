@@ -13,7 +13,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import { createTheme } from '@mui/material/styles';
 
-import Error from './routes/Error/Error';
+import Error from './routes/error/Error';
 import RootLayout from './routes/root/RootLayout';
 import Explore from './routes/explore/Explore';
 import ResortDetail from './routes/resort-detail/ResortDetail';
